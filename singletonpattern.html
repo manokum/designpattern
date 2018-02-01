@@ -1,0 +1,24 @@
+*****************************************************************************************************
+---------- SINGLETON PATTERN ----------
+****************************************************************************************************
+// Singletons are used when you only ever want 1 object to be created
+// Let's say you want to create a game character with fixed stats
+
+function Hero(name) {
+   
+ // Check if the object exists
+ 
+   if(typeof Hero.instance === 'object'){
+       return Hero.instance;
+   }
+   
+ // if it doesn't then create the hero
+   this.name = name;
+   Hero.instance = this;
+   return this;
+}
+
+var v1 = new Hero("V1");
+console.log(v1.name);
+var v2 = new Hero("V2")'
+console.log(v2.name);
